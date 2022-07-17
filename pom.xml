@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.com.zerobug</groupId>
+    <artifactId>zerobug-dependencies</artifactId>
+    <version>0.1.0-beta</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <!-- springboot 统一依赖 -->
+        <spring.boot.version>2.5.9</spring.boot.version>
+        <!-- 数据库相关依赖 -->
+        <mybatis.plus.version>3.5.1</mybatis.plus.version>
+        <mysql.version>8.0.20</mysql.version>
+        <mybatis.version>3.5.9</mybatis.version>
+        <dynamic.datasource.version>3.4.1</dynamic.datasource.version>
+        <p6spy.version>3.9.1</p6spy.version>
+        <pagehelper.boot.version>1.4.2</pagehelper.boot.version>
+        <!-- 工具类相关依赖 -->
+        <hutool.version>5.7.13</hutool.version>
+        <fastjson.version>1.2.76</fastjson.version>
+        <guava.version>31.0.1-jre</guava.version>
+        <guomi.version>1.69</guomi.version>
+        <transmittable-thread-local.version>2.12.2</transmittable-thread-local.version>
+        <jsqlparser.version>4.3</jsqlparser.version>
+        <velocity-engine.version>2.3</velocity-engine.version>
+        <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <lombok.version>1.18.22</lombok.version>
+        <knife4j.version>3.0.3</knife4j.version>
+        <commons.text.version>1.9</commons.text.version>
+        <swagger.v3.version>2.1.13</swagger.v3.version>
+        <swagger.v2.version>1.6.6</swagger.v2.version>
+        <netty.version>4.1.77.Final</netty.version>
+        <!-- 项目相关依赖 -->
+        <zerobug.version>0.1.0-beta</zerobug.version>
+        <zerobug.boot.version>0.1.0-beta</zerobug.boot.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--========================================-->
+            <!-- springboot 依赖包 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- 数据库相关依赖 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-annotation</artifactId>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+                <version>${dynamic.datasource.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>p6spy</groupId>
+                <artifactId>p6spy</artifactId>
+                <version>${p6spy.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper.boot.version}</version>
+            </dependency>
+
+
+            <!-- hutool 工具包 -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-core</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-http</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-extra</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-crypto</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <!-- mapstruct -->
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-jdk8</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+
+            <!-- fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!-- 国密算法 -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-jdk15to18</artifactId>
+                <version>${guomi.version}</version>
+            </dependency>
+
+            <!-- 阿里巴巴本地线程实现 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>transmittable-thread-local</artifactId>
+                <version>${transmittable-thread-local.version}</version>
+            </dependency>
+
+            <!-- jsql 解析包 -->
+            <dependency>
+                <groupId>com.github.jsqlparser</groupId>
+                <artifactId>jsqlparser</artifactId>
+                <version>${jsqlparser.version}</version>
+            </dependency>
+
+            <!-- 代码生成 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+
+            <!-- 模板 -->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity-engine.version}</version>
+            </dependency>
+
+            <!-- lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!-- knife4j -->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+
+            <!--swagger-->
+            <dependency>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger.v3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger.v2.version}</version>
+            </dependency>
+
+            <!-- guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <!-- apache 工具包 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-text</artifactId>
+                <version>${commons.text.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-common</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+
+            <!--=================== 组件包 =====================-->
+
+            <dependency>
+                <groupId>cn.com.zerobug</groupId>
+                <artifactId>zerobug-common</artifactId>
+                <version>${zerobug.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.com.zerobug</groupId>
+                <artifactId>component-orm-starter</artifactId>
+                <version>${zerobug.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.zerobug</groupId>
+                <artifactId>component-filter-starter</artifactId>
+                <version>${zerobug.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.zerobug</groupId>
+                <artifactId>component-security-starter</artifactId>
+                <version>${zerobug.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.zerobug</groupId>
+                <artifactId>component-cache-starter</artifactId>
+                <version>${zerobug.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.zerobug</groupId>
+                <artifactId>component-log-starter</artifactId>
+                <version>${zerobug.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.com.zerobug</groupId>
+                <artifactId>component-translate-starter</artifactId>
+                <version>${zerobug.version}</version>
+            </dependency>
+
+            <!--=================== zerobug-boot 项目包 =====================-->
+
+            <dependency>
+                <groupId>cn.com.zerobug</groupId>
+                <artifactId>module-api-system</artifactId>
+                <version>${zerobug.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.zerobug</groupId>
+                <artifactId>module-impl-system</artifactId>
+                <version>${zerobug.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.zerobug</groupId>
+                <artifactId>module-impl-auth</artifactId>
+                <version>${zerobug.boot.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>
