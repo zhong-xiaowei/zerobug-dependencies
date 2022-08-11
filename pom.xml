@@ -248,6 +248,11 @@
             </dependency>
             <dependency>
                 <groupId>cn.com.zerobug</groupId>
+                <artifactId>component-spring-security-starter</artifactId>
+                <version>${zerobug.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.zerobug</groupId>
                 <artifactId>component-security-starter</artifactId>
                 <version>${zerobug.version}</version>
             </dependency>
